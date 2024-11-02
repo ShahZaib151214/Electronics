@@ -1,0 +1,321 @@
+.container {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header {
+    background-color: #d9e5f1;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .textSection {
+    text-align: left;
+    max-width: 200px;
+  }
+  
+  .textSection h1 {
+    font-size: 28px;
+    width: 300px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .textSection p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .shopButton {
+    background-color: #ff4a4a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shopButton:hover {
+    background-color: #e53e3e;
+  }
+  
+  .imageSection {
+    margin-top: 20px;
+  }
+  
+  .image1 {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+
+
+
+  .container2 {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .statsBar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #d9e5f1;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .statItem h2 {
+    width:60%  ;
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .statItem p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .content2 {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .subheading {
+    color: #ff4a4a;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .content2 h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .benefitsGrid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+  
+  .benefitCard {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+  }
+  
+  .benefitCard h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .benefitCard p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+
+
+  .container3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+  }
+
+
+  .section2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .imageContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image {
+    width: 100%;
+    max-width: 200px;
+    min-height: 200px;
+    min-width: 300px;
+    border-radius: 8px;
+  }
+  
+  .iconOverlay {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .textContainer {
+    max-width: 500px;
+  }
+  
+  .subheading {
+    color: #ff4a4a;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .button2 {
+    background-color: #ff4a4a;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button2:hover {
+    background-color: #e53e3e;
+  }
+
+
+
+  .testimonialSection {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .titleT {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .headingT {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .userProfiles {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .userImage1 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .userImage2 {
+    border: 3px solid blue;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+
+  
+  .userInfo h3 {
+    margin: 0.5rem 0;
+  }
+  
+  .userInfo p {
+    margin: 0.25rem 0;
+  }
+  
+  .userTestimonial {
+    color: gray;
+    font-size: 0.9rem;
+  }
+  
+  @media (min-width: 768px) {
+    .content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+    }
+  
+    .textSection {
+      max-width: 40%;
+    }
+  
+    .imageSection {
+      max-width: 50%;
+    }
+    .benefitsGrid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+
+
+  }
+  @media (max-width:580px) {
+    .section2 {
+      flex-direction: column;
+    }
+    .testimonialSection {
+      padding: 1rem;
+    }
+    
+    .userImage1 {
+      width: 50px;
+      height: 50px;
+    }
+    .userImage2 {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .heading {
+      font-size: 1.25rem;
+    }
+    
+  }
