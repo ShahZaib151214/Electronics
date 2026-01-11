@@ -1,155 +1,189 @@
 .loginContainer {
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+}
+
+.loginBox {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  /* responsive wrap */
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.formContainer {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.signIn {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.signUp {
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgotPassword {
+  color: #666;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.loginButton {
+  padding: 0.6rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.loginButton:hover {
+  background-color: #c0392b;
+}
+
+.orContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.separator {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+  border: none;
+}
+
+.orContainer span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.imageContainer {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .loginContainer {
+    padding: 1rem;
   }
-  
-  .loginBox {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1200px;
-  }
-  
- 
-  
+
   .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
+    flex-direction: column-reverse;
+    /* image on bottom or removed */
   }
-  
-  .formContainer {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .tabs {
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .signIn {
-    color: red;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .signUp {
-    color: gray;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  .form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 5px;
-  }
-  
-  .forgotPassword {
-    align-self: flex-start;
-    color: #666;
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-  
-  .loginButton {
-    width: 40%;
-    padding: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .orContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .orContainer span {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  .socialIcons {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-  }
-  
-  .icon {
-    width: 30px;
-    height: 30px;
-  }
-  
+
   .imageContainer {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
+    /* Hide image on small screens or keep it? user said fully responsive. keeping it might stack too much scroling. lets hide or stack */
+    display: block;
+    /* actually showing it is better but stacked */
   }
-  
-  .productImage {
-    max-width: 100%;
-    height: auto;
+}
+
+@media (max-width: 480px) {
+
+  .signIn,
+  .signUp {
+    font-size: 1rem;
   }
-  
-  /* Responsive Styling */
-  @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .nav {
-      display: none;
-    }
+
+  .loginButton {
+    padding: 0.5rem 1.5rem;
   }
-  
-  @media (max-width: 480px) {
-    .header h1 {
-      font-size: 1.2rem;
-    }
-  
-    .signIn, .signUp {
-      font-size: 1rem;
-    }
-  
-    .loginButton {
-      font-size: 0.9rem;
-    }
-  
-    .productImage {
-      max-width: 80%;
-    }
-  }
-  
+}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './AboutNavbar.module.css';
+import styles from './ElectronicsNavbar.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const AboutNavbar = () => {
+const ElectronicsNavbar = () => {
     const navigate = useNavigate();
-    const [active, setActive] = useState('about');
+    const [active, setActive] = useState('electronics');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -20,7 +20,7 @@ const AboutNavbar = () => {
 
     return (
         <nav className={styles.navbar}>
-            <div className={`container ${styles.navContainer}`}>
+            <div className={`${styles.container} ${styles.navContainer}`}>
                 <Link to="/" className={styles.logo} onClick={() => setActive('home')}>
                     <strong>Your Logo</strong>
                 </Link>
@@ -76,4 +76,4 @@ const AboutNavbar = () => {
     );
 };
 
-export default AboutNavbar;
+export default ElectronicsNavbar;

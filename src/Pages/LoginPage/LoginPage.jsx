@@ -20,16 +20,16 @@ const LoginPage = () => {
             <form className={styles.form}>
               <input type="text" placeholder="Username" className={styles.input} />
               <input type="password" placeholder="Password" className={styles.input} />
-              <div style={{display:'flex',justifyContent:'space-between'}}>
-              <a href="#" className={styles.forgotPassword}>Forgot password</a>
-              <button type="submit" className={styles.loginButton}>Login</button>
+              <div className={styles.formFooter}>
+                <a href="#" className={styles.forgotPassword}>Forgot password</a>
+                <button type="submit" className={styles.loginButton}>Login</button>
               </div>
             </form>
             <div className={styles.orContainer}>
-                <div style={{display:'flex',gap:'20px',justifyContent:'space-between'}}>
-                    <hr style={{width:'12vw'}}/>
+                <div className={styles.separator}>
+                    <hr className={styles.line}/>
                    <span>OR</span>
-                   <hr style={{width:'13vw'}}/>
+                   <hr className={styles.line}/>
                 </div>
               <div className={styles.socialIcons}>
                 <img src={Loginpics.google} alt="Google" className={styles.icon} />

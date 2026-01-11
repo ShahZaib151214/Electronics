@@ -1,107 +1,79 @@
-import React, { useState } from 'react'
-import styles from './ContactNavbar.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {Link, useNavigate} from 'react-router-dom'
+import React, { useState } from 'react';
+import styles from './ContactNavbar.module.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
+
 const ContactNavbar = () => {
-  
- 
-    const [active , setactive] = useState('contact')
-  return (
-    <nav className={`navbar navbar-expand-lg navbar-light ${styles.navbar}`}>
-    <div className="container">
-      <a className={`navbar-brand ${styles.navbarBrand}`} href="#">
-        <strong>Your Logo</strong>
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className={`navbar-nav ms-auto ${styles.navbarNav}`}>
-        <li className="nav-item dropdown">
-        <Link to='/'
-          className={`nav-link dropdown-toggle ${styles.navLink} ${active === 'home' ? styles.active : ''}`}
-          id="homeDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          onClick={() => {setActive('home'); navigate('/')}}
-        >
-          Home
-        </Link>
-        <ul className={`dropdown-menu ${styles.dropdownMenu}`} aria-labelledby="homeDropdown">
-          <li><Link className="dropdown-item" to="/home/submenu1">Submenu 1</Link></li>
-          <li><Link className="dropdown-item" to="/home/submenu2">Submenu 2</Link></li>
-        </ul>
-      </li>
+    const navigate = useNavigate();
+    const [active, setActive] = useState('contact');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      <li className="nav-item dropdown">
-        <Link
-          className={`nav-link dropdown-toggle ${styles.navLink} ${active === 'electronics' ? styles.active : ''}`}
-          id="electronicsDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          onClick={() => setActive('electronics')}
-        >
-          Electronics
-        </Link>
-        <ul className={`dropdown-menu ${styles.dropdownMenu}`} aria-labelledby="electronicsDropdown">
-          <li><Link className="dropdown-item" to="/electronics/item1">Item 1</Link></li>
-          <li><Link className="dropdown-item" to="/electronics/item2">Item 2</Link></li>
-        </ul>
-      </li>
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
-      <li className="nav-item">
-        <Link
-        
-          className={`nav-link ${styles.navLink} ${active === 'contact' ? styles.active : ''}`}
-          to="/contact"
-          onClick={() => {setActive('contact');navigate('/contact')}}
-        >
-          Contacts
-        </Link>
-      </li>
+    const handleLinkClick = (page) => {
+        setActive(page);
+        setIsMenuOpen(false);
+        navigate(page === 'home' ? '/' : `/${page}`);
+    };
 
-      <li className="nav-item dropdown">
-        <Link
-          to='/about'
-          className={`nav-link dropdown-toggle ${styles.navLink} ${active === 'about' ? styles.active : ''}`}
-          id="aboutDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          onClick={() => { setActive('about'); navigate('/about'); }}
-        >
-          About
-        </Link>
-        <ul className={`dropdown-menu ${styles.dropdownMenu}`} aria-labelledby="aboutDropdown">
-          <li><Link className="dropdown-item" to="/about/info">Info</Link></li>
-          <li><Link className="dropdown-item" to="/about/team">Team</Link></li>
-        </ul>
-      </li>
+    return (
+        <nav className={styles.navbar}>
+            <div className={`container ${styles.navContainer}`}>
+                <Link to="/" className={styles.logo} onClick={() => setActive('home')}>
+                    <strong>Your Logo</strong>
+                </Link>
 
-      <li className="nav-item">
-        <Link
-          className={`nav-link ${styles.navLink} ${active === 'login' ? styles.active : ''}`}
-          to="/login"
-          onClick={() => {setActive('login'); navigate('/login')}}
-        >
-          Login
-        </Link>
-      </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  )
-}
+                <div className={styles.mobileIcon} onClick={toggleMenu}>
+                    {isMenuOpen ? <FaTimes /> : <FaBars />}
+                </div>
+
+                <ul className={`${styles.navMenu} ${isMenuOpen ? styles.active : ''}`}>
+                    <li className={styles.navItem}>
+                        <span
+                            className={`${styles.navLink} ${active === 'home' ? styles.activeLink : ''}`}
+                            onClick={() => handleLinkClick('home')}
+                        >
+                            Home
+                        </span>
+                    </li>
+                    <li className={styles.navItem}>
+                        <span
+                            className={`${styles.navLink} ${active === 'electronics' ? styles.activeLink : ''}`}
+                            onClick={() => handleLinkClick('electronics')}
+                        >
+                            Electronics
+                        </span>
+                    </li>
+                    <li className={styles.navItem}>
+                        <span
+                            className={`${styles.navLink} ${active === 'contact' ? styles.activeLink : ''}`}
+                            onClick={() => handleLinkClick('contact')}
+                        >
+                            Contact
+                        </span>
+                    </li>
+                    <li className={styles.navItem}>
+                        <span
+                            className={`${styles.navLink} ${active === 'about' ? styles.activeLink : ''}`}
+                            onClick={() => handleLinkClick('about')}
+                        >
+                            About
+                        </span>
+                    </li>
+                    <li className={styles.navItem}>
+                        <span
+                            className={`${styles.navLink} ${active === 'login' ? styles.activeLink : ''}`}
+                            onClick={() => handleLinkClick('login')}
+                        >
+                            Login
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
+};
 
 export default ContactNavbar;
