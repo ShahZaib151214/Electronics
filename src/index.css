@@ -1,44 +1,57 @@
-:root {
-  --primary-color: #e74c3c;
-  --secondary-color: #333;
-  --bg-color: #f4f4f4;
-  --text-color: #333;
-  --white: #fff;
-  --font-family: 'Poppins', sans-serif; /* Example font */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-secondary: #64748b;
+  --color-accent: #f59e0b;
+  --color-dark: #0f172a;
+  --color-light: #f8fafc;
+  
+  --font-sans: "Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  :root {
+    --bg-main: theme(--color-light);
+    --text-main: theme(--color-dark);
+  }
+
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+
+  ul {
+    @apply list-none p-0 m-0;
+  }
+
+  img {
+    @apply max-w-full h-auto block;
+  }
 }
 
-body {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
 
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Responsive Container Utility */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  /* Basic Button - will be refined in component */
+  .btn-base {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
 }
